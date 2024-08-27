@@ -1,0 +1,10 @@
+div {
+    width: 200px;
+    height: 200px;
+    background-color: lightgray;
+}
+
+.box1 {
+    padding: 50px;
+    border: 1px solid blue;
+}
