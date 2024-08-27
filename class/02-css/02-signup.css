@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+ 
+
+}
+body{
+    width: 100%;
+    height: 100%;
+    display : flex;
+    justify-content: center;
+    align-items : center;
+}
+
+h2 {
+    color: #0068FF;
+    text-align: left;
+}
+
+.wrapper {
+    border: 1px solid #AACDFF;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    border-radius: 20px;
+    border: 1px 0px 0px 0px;
+    padding: 40PX;
+}
+
+.wrapper__Join {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.joinBtn {
+    border: 1px solid #0068FF;
+    color: #0068FF;
+    width: 470px;
+    height: 75px;
+    top: 875px;
+    left: 725px;
+    border-radius: 10px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background-color: transparent;
+
+
+}
