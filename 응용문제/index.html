@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 다음의 지문과 같이 요구 조건에 만족하는 결과를 완성하시오. 요일을 입력 
+        받아서 해당하는 구문을 실행하시오. 
+        단 월요일은 1, 화요일은 2, 일요일 7로 변환하여 해당하는 결과를 얻을 것. -->
+</head>
+
+<body>
+    <script>
+        {
+            const result = prompt('해당하는 요일을 입력하세요', '월요일')
+            switch (result) {
+                case 0:
+                    console.log('해당하는 요일이 없습니다');
+                    break;
+                case 1:
+                console.log('해당하는 월요일이 없습니다');
+                    break;
+                case 2:
+                console.log('해당하는 화요일이 없습니다');
+                    break;
+                case 3:
+                console.log('해당하는 수요일이 없습니다');
+                    break;
+                case 4:
+                console.log('해당하는 목요일이 없습니다');
+                    break;
+                case 5:
+                console.log('해당하는 금요일이 없습니다');
+                    break;
+                case 6:
+                console.log('해당하는 토요일이 없습니다');
+            }
+        }
+        {
+            // switch문 응용문제2
+            // 다음의 지문과 같이 요구 조건에 만족하는 결과를 완성하시오. 좋아하는 과일을 입력받아서 해당하는 과일의 가격을 변수에 저장하고 
+            // 결과를 다음과 같이 출력하시오. (사과 4.5, 바나나 4.0, 수박 8.0, 딸기 5.0)
+        }
+
+
+
+        
+        {
+        let star = '';
+        for(let i=1; i <=5; i++) {
+            for(let j= 1; j<=5; j++){
+            if(j!=5) {
+                star += '0'
+            }else {
+                star += '1\n';
+            }
+            }
+        }
+        console.log(star);
+        
+        }
+    </script>
+</body>
+
+</html>
