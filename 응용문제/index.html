@@ -12,54 +12,98 @@
 
 <body>
     <script>
+        // {
+        //     const result = prompt('해당하는 요일을 입력하세요', '월요일')
+        //     switch (result) {
+        //         case 0:
+        //             console.log('해당하는 요일이 없습니다');
+        //             break;
+        //         case 1:
+        //         console.log('해당하는 월요일이 없습니다');
+        //             break;
+        //         case 2:
+        //         console.log('해당하는 화요일이 없습니다');
+        //             break;
+        //         case 3:
+        //         console.log('해당하는 수요일이 없습니다');
+        //             break;
+        //         case 4:
+        //         console.log('해당하는 목요일이 없습니다');
+        //             break;
+        //         case 5:
+        //         console.log('해당하는 금요일이 없습니다');
+        //             break;
+        //         case 6:
+        //         console.log('해당하는 토요일이 없습니다');
+        //     }
+        // }
+        // switch문 응용문제2
+        // 다음의 지문과 같이 요구 조건에 만족하는 결과를 완성하시오. 좋아하는 과일을 입력받아서 해당하는 과일의 가격을 변수에 저장하고 
+        // 결과를 다음과 같이 출력하시오. (사과 4.5, 바나나 4.0, 수박 8.0, 딸기 5.0)
         {
-            const result = prompt('해당하는 요일을 입력하세요', '월요일')
-            switch (result) {
-                case 0:
-                    console.log('해당하는 요일이 없습니다');
-                    break;
-                case 1:
-                console.log('해당하는 월요일이 없습니다');
-                    break;
-                case 2:
-                console.log('해당하는 화요일이 없습니다');
-                    break;
-                case 3:
-                console.log('해당하는 수요일이 없습니다');
-                    break;
-                case 4:
-                console.log('해당하는 목요일이 없습니다');
-                    break;
-                case 5:
-                console.log('해당하는 금요일이 없습니다');
-                    break;
-                case 6:
-                console.log('해당하는 토요일이 없습니다');
+            const fruitSelect = prompt('좋아하는 과일을 입력하세요', '과일')
+                let resultSite = null;
+                switch (fruitSelect) {
+                    case '사과':
+                        fruitPrice = '4.5';
+                        break;
+                    case '바나나':
+                        fruitPrice = '4.0';
+                        break;
+                    case '수박':
+                        fruitPrice = '8.0';
+                        break;
+                    case '딸기':
+                        fruitPrice = '5.0';
+                        break;
+                    default:
+                        alert("어떤 값인지 파악이 되지 않습니다.");
+                }
+               console.log(`${fruitSelect}의 가격은 ${fruitPrice}입니다`);
+               
             }
-        }
-        {
-            // switch문 응용문제2
-            // 다음의 지문과 같이 요구 조건에 만족하는 결과를 완성하시오. 좋아하는 과일을 입력받아서 해당하는 과일의 가격을 변수에 저장하고 
-            // 결과를 다음과 같이 출력하시오. (사과 4.5, 바나나 4.0, 수박 8.0, 딸기 5.0)
-        }
-
-
-
         
-        {
-        let star = '';
-        for(let i=1; i <=5; i++) {
-            for(let j= 1; j<=5; j++){
-            if(j!=5) {
-                star += '0'
-            }else {
-                star += '1\n';
-            }
-            }
-        }
-        console.log(star);
-        
-        }
+
+
+
+
+        // {
+        // let star = '';
+        // for(let i=1; i <=5; i++) {
+        //     for(let j= 1; j<=5; j++){
+        //     if(j!=5) {
+        //         star += '0'
+        //     }else {
+        //         star += '1\n';
+        //     }
+        //     }
+        // }
+        // console.log(star);
+
+        // }
+        // 함수 응용문제2
+        // 다음과 같은 출력결과가 되도록 프로그램을 완성하시오.
+        // 함수를 실행하여 문자의 값이 “이상”이면 네이버로 이동하고
+        // 문자의 값이 “이하”이면 구글로 이동하고
+        // 그렇지 않으면 다시 입력 값을 받도록 처리하시오.
+        // {
+        //     function site() {
+        //         const webSite = prompt('이상 , 이하를 입력하시오', '이하')
+        //         let resultSite = null;
+        //         switch (webSite) {
+        //             case '이상':
+        //                 resultSite = 'http://naver.com';
+        //                 break;
+        //             case '이하':
+        //                 resultSite = 'http://google.com';
+        //                 break;
+        //             default:
+        //                 alert("어떤 값인지 파악이 되지 않습니다.");
+        //         }
+        //         location.href = resultSite;
+        //     }
+        //     site()
+        // }
     </script>
 </body>
 
