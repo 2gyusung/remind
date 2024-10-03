@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .btn1 {
+            width: 190px;
+            display: inline-block;
+            background-color: #123ecf;
+            border-radius: 5px;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            padding: 10px;
+            color: #ffffff;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .btn1:hover {
+            width: 260px;
+        }
+
+        /* btn2 */
+        .btn2 {
+            width: 190px;
+            display: inline-block;
+            background-color: #123ecf;
+            border-radius: 5px;
+            text-decoration: none;
+            padding: 10px;
+            color: #ffffff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn2:hover {
+            width: 260px;
+            background-color: #002398;
+        }
+
+        /* btn3 */
+        .btn3 {
+            width: 190px;
+            display: inline-block;
+            background-color: #123ecf;
+            border-radius: 5px;
+            text-decoration: none;
+            padding: 10px;
+            color: #ffffff;
+            transition: width 0.5s ease-in-out 0.5s,
+                background-color 0.5s ease-in-out;
+        }
+
+        .btn3:hover {
+            width: 320px;
+            background-color: #002398;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" class="btn1">마우스 올리면 길어져요 transition: width 0.3s ease-in-out</a>
+    <a href="#" class="btn2">마우스 올리면 길어져요 transition: width 0.3s ease-in-out background-color: #002398;</a>
+    <a href="#" class="btn3">마우스 올리면 길어져요 transition: width 0.3s ease-in-out background-color: #002398;</a>
+</body>
+
+</html>
