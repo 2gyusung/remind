@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      const dateFoMaker = function () {
+      const dateForMaker = function () {
         const inputYear = document.querySelector("#target-year-input").value;
         const inputMonth = document.querySelector("#target-month-input").value;
         const inputDate = document.querySelector("#target-date-input").value;
 
         //const dateFormat = inputYear + "-" + inputMonth + "-" + inputDate;
-        const dateFormat = `${inputYear} - ${inputMonth} - ${inputDate}`;
+        const dateFormat = `${inputYear}-${inputMonth}-${inputDate}`;
         return dateFormat;
 
         // console.log(inputYear, inputDate, inputMonth);
       };
       const counterMaker = function () {
-        const targetDateInput = dateFoMaker();
+        const targetDateInput = dateForMaker();
         // console.log(targetDateInput);
         const nowDate = new Date();
         const targetDate = new Date(targetDateInput).setHours(0, 0, 0, 0);
@@ -28,7 +28,8 @@
         const remaingMin = Math.floor(remaining / 60) % 60;
         const remaingSec = Math.floor(remaining) % 60;
 
-
+        console.log('클릭');
+        
         console.log(remainingDate, remaingHours, remaingMin, remaingSec);
       };
     </script>
