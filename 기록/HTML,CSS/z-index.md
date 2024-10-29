@@ -7,7 +7,7 @@ position을 이용해 요소의 위치를 옮기다 보면 여러개의 요소�
 ## z축이란?
 우리가 흔히 아는 2차원 공간을 3차원 공간으로 확장하게 되면 z축 이 하나 더 생기게 됩니다.
 
-<img src="./img/z-index.png">
+<img src="../img/z-index.png">
 
 # z-index 사용해보기
 
