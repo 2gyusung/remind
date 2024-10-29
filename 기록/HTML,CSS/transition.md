@@ -44,4 +44,4 @@ transition-delay: 2s
 즉, 이벤트가 발생한 시점으로부터 2초 이후에 트랜지션이 일어나게 됩니다.
 delay는 초(s), 혹은 밀리초(ms) 단위로 지정이 가능합니다.
 
-<img src="./img/transition.png">
+<img src="../img/transition.png">
