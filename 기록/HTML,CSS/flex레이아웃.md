@@ -26,7 +26,7 @@ flex가 적용된 요소(Flexbile box)에는 `중심축(main-axis)`와 `교차�
 
 이 중심축과 교차축은 Flexible box의 정렬 기준이 됩니다.
 
-<img src="img/flex.png">
+<img src="../img/flex.png">
 
 ### 컨테이너에 적용하는 속성들
 
@@ -39,35 +39,35 @@ flex가 적용된 요소(Flexbile box)에는 `중심축(main-axis)`와 `교차�
     - 메인축 방향으로 어떻게 정렬할지 결정합니다.
 
 - flex-start
-<img src="img/flex2.png">
+<img src="../img/flex2.png">
 
 - flex-end
-<img src="img/flex3.png">
+<img src="../img/flex3.png">
 
 - center
-<img src="img/flex4.png">
+<img src="../img/flex4.png">
 
 - space-between
-<img src="img/flex5.png">
+<img src="../img/flex5.png">
 
 - space-around
-<img src="img/flex6.png">
+<img src="../img/flex6.png">
 
 - space-evenly
-<img src="img/flex7.png">
+<img src="../img/flex7.png">
 
 - **align-items (교차축 방향 정렬)**
     - 교차축 방향, 즉 메인축의 수직 방향으로 어떻게 정렬할지 결정합니다.
 
 
 - stretch
-<img src="img/flex8.png">
+<img src="../img/flex8.png">
 
 - flex-start 
-<img src="img/flex9.png">
+<img src="../img/flex9.png">
 
 - flex-end
-<img src="img/flex10.png">
+<img src="../img/flex10.png">
 
 - center
-<img src="img/flex11.png">
+<img src="../img/flex11.png">
