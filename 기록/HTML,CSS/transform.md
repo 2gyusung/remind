@@ -29,7 +29,7 @@ transform: translate(20px, 25%)
 
 > ❗️ **`소괄호 안에 한개의 값만 입력된 경우`**에는 **`두 영역에 동일한 값이 입력된 것`**으로 간주합니다.
 >
-<img src="./img/translate.png">
+<img src="../img/translate.png">
 
 
 ### translateX(n) / translateX(n)
@@ -49,7 +49,7 @@ scale 변환함수는 **배수로 측정** 하기때문에 기존 요소의 몇 
 transform: scale(0.75,1.1)
 ```
 
-<img src="./img/scale.png">
+<img src="../img/scale.png">
 
 ### scaleX(n) / scaleY(n)
 
@@ -65,7 +65,7 @@ transform: scaleY(1.1)
 ```
 transform: skew(15deg,10deg)
 ```
-<img src="./img/skew.png">
+<img src="../img/skew.png">
 
 ### skewX(n) / skewY(n)
 
@@ -81,4 +81,4 @@ transform: skewX(15deg)
 ```
 transform: rotate(45deg)
 ```
-<img src="./img/rotate.png">    
+<img src="../img/rotate.png">    
