@@ -45,10 +45,10 @@ const counterMaker = function () {
     remaingSec: Math.floor(remaining) % 60,
   };
 
-//   const days = document.getElementById("days");
-//   const hours = document.getElementById("hours");
-//   const min = document.getElementById("min");
-//   const sec = document.getElementById("sec");
+  //   const days = document.getElementById("days");
+  //   const hours = document.getElementById("hours");
+  //   const min = document.getElementById("min");
+  //   const sec = document.getElementById("sec");
 
   const documentObj = {
     days: document.getElementById("days"),
@@ -56,11 +56,20 @@ const counterMaker = function () {
     min: document.getElementById("min"),
     sec: document.getElementById("sec"),
   };
+  const timeKeys = Object.keys(remaingObj); // Object.keys : 객체의 키를 가져와 배열로 반환
+  const docKeys = Object.keys(documentObj);
 
-  documentObj['days'].textContent = remaingObj["remainingDate"];
-  documentObj['hours'].textContent = remaingObj["remaingHours"];
-  documentObj['min'].textContent = remaingObj["remaingMin"];
-  documentObj['sec'].textContent = remaingObj["remaingSec"];
+  for (let i = 0; i < timeKeys.length; i = i + 1) {
+    documentObj[docKeys[i]].textContent = remaingObj[timeKeys[i]];
+
+    // console.log(timeKeys);
+    // console.log(timeKeys[i]);
+  }
+
+  // documentObj['days'].textContent = remaingObj["remainingDate"];
+  // documentObj['hours'].textContent = remaingObj["remaingHours"];
+  // documentObj['min'].textContent = remaingObj["remaingMin"];
+  // documentObj['sec'].textContent = remaingObj["remaingSec"];
 
   //   console.log("클릭");
 
