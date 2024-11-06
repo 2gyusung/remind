@@ -1,7 +1,7 @@
 const messageContainer = document.querySelector("#d-day-message");
 const container = document.querySelector("#d-day-container");
 
-// container.style.display = 'none'
+container.style.display = 'none'
 messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요</h3>";
 
 const dateForMaker = function () {
@@ -50,21 +50,45 @@ const counterMaker = function () {
   //   const min = document.getElementById("min");
   //   const sec = document.getElementById("sec");
 
-  const documentObj = {
-    days: document.getElementById("days"),
-    hours: document.getElementById("hours"),
-    min: document.getElementById("min"),
-    sec: document.getElementById("sec"),
-  };
-  const timeKeys = Object.keys(remaingObj); // Object.keys : 객체의 키를 가져와 배열로 반환
-  const docKeys = Object.keys(documentObj);
+  // const documentObj = {
+  //   days: document.getElementById("days"),
+  //   hours: document.getElementById("hours"),
+  //   min: document.getElementById("min"),
+  //   sec: document.getElementById("sec"),
+  // };
 
-  for (let i = 0; i < timeKeys.length; i = i + 1) {
-    documentObj[docKeys[i]].textContent = remaingObj[timeKeys[i]];
+  const documentArr = ['days', 'hours', 'min' , 'sec']
+  // const docKeys = Object.keys(documentObj);
+  const timeKeys = Object.keys(remaingObj); // Object.keys : 객체의 키를 가져와 배열로 반환f
 
-    // console.log(timeKeys);
-    // console.log(timeKeys[i]);
+  let i = 0;  
+  for (let tag of documentArr) { // 배열로 이용한다
+   document.getElementById(tag).textContent = remaingObj[timeKeys[i]]
+   i++
+    
   }
+
+  const starter = function () {
+    container.style.display ='flex'
+    messageContainer.style.display = 'none'
+    counterMaker()
+  }
+
+
+
+  // for (let i = 0; i < timeKeys.length; i = i + 1) { for문
+  //   documentObj[docKeys[i]].textContent = remaingObj[timeKeys[i]];
+
+  //   // console.log(timeKeys);
+  //   // console.log(timeKeys[i]);
+  // }
+  
+  // let i = 0;
+
+  // for (let key in documentObj) { // 객체로 이용한다 for in
+  //   documentObj[key].textContent = remaingObj[timeKeys [i]]
+  //   i++;
+  // }
 
   // documentObj['days'].textContent = remaingObj["remainingDate"];
   // documentObj['hours'].textContent = remaingObj["remaingHours"];
