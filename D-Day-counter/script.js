@@ -1,7 +1,8 @@
 const messageContainer = document.querySelector("#d-day-message");
 const container = document.querySelector("#d-day-container");
+const intervalIdArr = [];
 
-container.style.display = 'none'
+container.style.display = "none";
 messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요</h3>";
 
 const dateForMaker = function () {
@@ -26,11 +27,19 @@ const counterMaker = function () {
 
   if (remaining === 0 || remaining < 0) {
     // console.log("타이머가 종료되었습니다");
+    container.style.display = "none";
     messageContainer.innerHTML = "<h3>타이머가 종료되었습니다</h3>";
+    messageContainer.style.display = "flex";
+    setClearInterval()
+    return;
   } else if (isNaN(remaining)) {
     // 만약 잘못된 날짜가 들어왔다면, 유효한 시간대가 아닙니다 출력
     // console.log("유효한 시간대가 아닙니다");
+    container.style.display = "none";
     messageContainer.innerHTML = "<h3>유효한 시간대가 아닙니다</h3>";
+    messageContainer.style.display = "flex";
+    setClearInterval()
+    return;
   }
 
   //   const remainingDate = Math.floor(remaining / 3600 / 24); //Math. floor 소숫점 제거
@@ -57,24 +66,17 @@ const counterMaker = function () {
   //   sec: document.getElementById("sec"),
   // };
 
-  const documentArr = ['days', 'hours', 'min' , 'sec']
+  const documentArr = ["days", "hours", "min", "sec"];
   // const docKeys = Object.keys(documentObj);
   const timeKeys = Object.keys(remaingObj); // Object.keys : 객체의 키를 가져와 배열로 반환f
+  // ['remainingDate','remaingHours','remaingMin','remaingSec']
 
-  let i = 0;  
-  for (let tag of documentArr) { // 배열로 이용한다
-   document.getElementById(tag).textContent = remaingObj[timeKeys[i]]
-   i++
-    
+  let i = 0;
+  for (let tag of documentArr) {
+    // 배열로 이용한다
+    document.getElementById(tag).textContent = remaingObj[timeKeys[i]];
+    i++;
   }
-
-  const starter = function () {
-    container.style.display ='flex'
-    messageContainer.style.display = 'none'
-    counterMaker()
-  }
-
-
 
   // for (let i = 0; i < timeKeys.length; i = i + 1) { for문
   //   documentObj[docKeys[i]].textContent = remaingObj[timeKeys[i]];
@@ -82,7 +84,7 @@ const counterMaker = function () {
   //   // console.log(timeKeys);
   //   // console.log(timeKeys[i]);
   // }
-  
+
   // let i = 0;
 
   // for (let key in documentObj) { // 객체로 이용한다 for in
@@ -98,4 +100,22 @@ const counterMaker = function () {
   //   console.log("클릭");
 
   //   console.log(remainingDate, remaingHours, remaingMin, remaingSec);
+};
+
+const starter = () => {
+  container.style.display = "flex";
+  messageContainer.style.display = "none";
+  counterMaker();
+  const intervalId = setInterval(counterMaker, 1000);
+  intervalIdArr.push(intervalId);
+  console.log(intervalIdArr);
+};
+
+const setClearInterval = function () {
+  container.style.display = "none";
+  messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요</h3>";
+  messageContainer.style.display = 'flex';
+  for (let i = 0; i < intervalIdArr.length; i++) {
+    clearInterval(intervalIdArr[i]);
+  }
 };
