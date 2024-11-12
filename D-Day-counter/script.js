@@ -42,29 +42,12 @@ const counterMaker = function () {
     return;
   }
 
-  //   const remainingDate = Math.floor(remaining / 3600 / 24); //Math. floor 소숫점 제거
-  //   const remaingHours = Math.floor(remaining / 3600) % 24;
-  //   const remaingMin = Math.floor(remaining / 60) % 60;
-  //   const remaingSec = Math.floor(remaining) % 60;
-
   const remaingObj = {
     remainingDate: Math.floor(remaining / 3600 / 24),
     remaingHours: Math.floor(remaining / 3600) % 24,
     remaingMin: Math.floor(remaining / 60) % 60,
     remaingSec: Math.floor(remaining) % 60,
   };
-
-  //   const days = document.getElementById("days");
-  //   const hours = document.getElementById("hours");
-  //   const min = document.getElementById("min");
-  //   const sec = document.getElementById("sec");
-
-  // const documentObj = {
-  //   days: document.getElementById("days"),
-  //   hours: document.getElementById("hours"),
-  //   min: document.getElementById("min"),
-  //   sec: document.getElementById("sec"),
-  // };
 
   const documentArr = ["days", "hours", "min", "sec"];
   // const docKeys = Object.keys(documentObj);
@@ -77,29 +60,6 @@ const counterMaker = function () {
     document.getElementById(tag).textContent = remaingObj[timeKeys[i]];
     i++;
   }
-
-  // for (let i = 0; i < timeKeys.length; i = i + 1) { for문
-  //   documentObj[docKeys[i]].textContent = remaingObj[timeKeys[i]];
-
-  //   // console.log(timeKeys);
-  //   // console.log(timeKeys[i]);
-  // }
-
-  // let i = 0;
-
-  // for (let key in documentObj) { // 객체로 이용한다 for in
-  //   documentObj[key].textContent = remaingObj[timeKeys [i]]
-  //   i++;
-  // }
-
-  // documentObj['days'].textContent = remaingObj["remainingDate"];
-  // documentObj['hours'].textContent = remaingObj["remaingHours"];
-  // documentObj['min'].textContent = remaingObj["remaingMin"];
-  // documentObj['sec'].textContent = remaingObj["remaingSec"];
-
-  //   console.log("클릭");
-
-  //   console.log(remainingDate, remaingHours, remaingMin, remaingSec);
 };
 
 const starter = () => {
@@ -112,9 +72,9 @@ const starter = () => {
 };
 
 const setClearInterval = function () {
-  container.style.display = "none";
-  messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요</h3>";
-  messageContainer.style.display = "flex";
+  // container.style.display = "none";
+  // messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요</h3>";
+  // messageContainer.style.display = "flex";
   for (let i = 0; i < intervalIdArr.length; i++) {
     clearInterval(intervalIdArr[i]);
   }
@@ -124,5 +84,5 @@ const resetTimer = function () {
   container.style.display = "none";
   messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요</h3>";
   messageContainer.style.display = "flex";
-  setClearInterval()
+  setClearInterval();
 };
