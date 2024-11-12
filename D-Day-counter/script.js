@@ -16,11 +16,13 @@ const dateForMaker = function () {
 
   // console.log(inputYear, inputDate, inputMonth);
 };
-const counterMaker = function () {
+const counterMaker = function (data) {
+  console.log(data);
+  
   const targetDateInput = dateForMaker();
   // console.log(targetDateInput);
   const nowDate = new Date();
-  const targetDate = new Date(targetDateInput).setHours(0, 0, 0, 0);
+  const targetDate = new Date(data).setHours(0, 0, 0, 0);
   const remaining = (targetDate - nowDate) / 1000;
   // 만약  remaining이 0이라면 , 타이머가 종료 되었습니다 출력 (수도코드)
   console.log(remaining);
@@ -54,19 +56,30 @@ const counterMaker = function () {
   const timeKeys = Object.keys(remaingObj); // Object.keys : 객체의 키를 가져와 배열로 반환f
   // ['remainingDate','remaingHours','remaingMin','remaingSec']
 
+  const format = function(time) {
+    if(time < 10) {
+      return '0' + time
+    }else {
+      return time
+    }
+  }
+
   let i = 0;
   for (let tag of documentArr) {
+    const remaingTime = format(remaingObj[timeKeys[i]]);
     // 배열로 이용한다
-    document.getElementById(tag).textContent = remaingObj[timeKeys[i]];
+    document.getElementById(tag).textContent = remaingTime
     i++;
   }
 };
 
 const starter = () => {
+  const targetDateInput = dateForMaker()
   container.style.display = "flex";
   messageContainer.style.display = "none";
-  counterMaker();
-  const intervalId = setInterval(counterMaker, 1000);
+  setClearInterval()
+  counterMaker(targetDateInput);
+  const intervalId = setInterval(() => counterMaker(targetDateInput), 1000);
   intervalIdArr.push(intervalId);
   console.log(intervalIdArr);
 };
