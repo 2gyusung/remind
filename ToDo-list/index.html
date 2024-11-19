@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>ToDo</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>TODO</h1>
     <div class="todo-container">
-        <input type="text" id="todo-input">
-        <ul>
-            <li>할일</li>
-        </ul>
+      <input type="text" id="todo-input" onkeydown="keyCodeCheck()" />
+      <ul>
+        <li>할일</li>
+        <li><span>할일</span></li>
+      </ul>
     </div>
 
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
