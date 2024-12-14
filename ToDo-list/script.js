@@ -94,3 +94,27 @@ if (savedTodoList) {
     createTodo(savedTodoList[i]);
   }
 }
+
+const acessToGeo = function (position) {
+    const positionObj = {
+      latitude : position.coords.latitude,
+      longitube :position.coords.longitude
+
+    }
+    console.log(positionObj);
+
+    console.log(position);
+    
+    
+    
+}
+
+
+// geolocation API 위치 허용
+const askForLocation = function () {
+  navigator.geolocation.getCurrentPosition(acessToGeo, (err)=> {
+    console.log(err);
+    
+  }); 
+}
+askForLocation()
