@@ -112,7 +112,7 @@ const acessToGeo = function (position) {
 
 // geolocation API 위치 허용
 const askForLocation = function () {
-  navigator.geolocation.getCurrentPosition(acessToGeo, (err)=> {
+  navigator .getCurrentPosition(acessToGeo, (err)=> {
     console.log(err);
     
   }); 

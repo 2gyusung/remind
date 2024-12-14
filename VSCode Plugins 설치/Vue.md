@@ -1,0 +1,2 @@
+- Vue.js 애플리케이션 디버깅을 위한 Chrome 브라우저의 확장 프로그램입니다. (Vue 3 지원 다운로드)
+- Volar Extension + TypeScript Vue Plugin
