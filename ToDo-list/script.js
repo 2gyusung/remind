@@ -1,6 +1,7 @@
 // DOM 요소 선택
 const todoInput = document.querySelector("#todo-input"); // 할 일 입력 필드
 const todoList = document.querySelector("#todo-list"); // 할 일 목록
+const savedWeatherData = JSON.parse(localStorage.getItem("saved-weather"));
 
 // localStorage에서 저장된 데이터를 불러오기
 const savedTodoList = JSON.parse(
@@ -97,26 +98,59 @@ if (savedTodoList) {
   }
 }
 
-const weatherSearch = function (position) {
+const weatherDataActive = function ({ location, weather }) {
+  const weatherMainList = [
+    "Clear",
+    "Cloude",
+    "Drizzle",
+    "Rain",
+    "Snow",
+    "Thunderstorm",
+  ];
+  weather = weatherMainList.includes(weather) ? weather : "Fog";
+  const locationNameTag = document.querySelector("#location-name-tag");
+  locationNameTag.textContent = location;
+  document.body.style.backgroundImage = `url('./images/${weather}.jpg')`;
+  if (
+    !savedWeatherData ||
+    savedWeatherData.location !== location ||
+    savedWeatherData.weather !== weather
+  ) {
+    localStorage.setItem(
+      "saved-weather",
+      JSON.stringify({ location, weather })
+    );
+  }
+};
+
+const weatherSearch = function ({ latitude, longitude }) {
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=9756434244216c3d2f9c08591b54bede`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=9756434244216c3d2f9c08591b54bede`
   )
     .then((res) => {
       return res.json();
     })
     .then((json) => {
-      console.log(json.name ,json.weather[0].description);
+      const weatherData = {
+        location: json.name,
+        weather: json.weather[0].main,
+      };
+      console.log(json.name, json.weather[0].main);
+      weatherDataActive(weatherData);
     })
-    .catch((err)=> {
-     console.log(err);
-    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 // 위치 정보를 처리하는 함수
-const acessToGeo = function (position) {
+const acessToGeo = function ({ coords }) {
+  const { latitude, longitude } = coords;
+  console.log(latitude, longitude);
+  // shorthand property
   const positionObj = {
-    latitude: position.coords.latitude, // 위도
-    longitude: position.coords.longitude, // 경도 (오타: longitube → longitude)
+    latitude, // 위도
+    longitude, // 경도 (오타: longitube → longitude)
   };
   // console.log(positionObj); // 위치 정보 출력
   // console.log(position); // 전체 위치 데이터 출력
@@ -135,3 +169,7 @@ const askForLocation = function () {
 
 // 위치 요청 실행
 askForLocation();
+
+if (savedWeatherData) {
+  weatherDataActive(savedWeatherData);
+}
