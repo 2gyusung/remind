@@ -1,6 +1,6 @@
 // DOM 요소 선택
 const todoInput = document.querySelector("#todo-input"); // 할 일 입력 필드
-const todoList = document.querySelector("#todo-list");   // 할 일 목록
+const todoList = document.querySelector("#todo-list"); // 할 일 목록
 
 // localStorage에서 저장된 데이터를 불러오기
 const savedTodoList = JSON.parse(
@@ -10,13 +10,13 @@ const savedTodoList = JSON.parse(
 // 새로운 할 일을 생성하는 함수
 const createTodo = function (storageData) {
   let todoContents = todoInput.value; // 입력 필드에서 가져온 값
-  
+
   if (storageData) {
     todoContents = storageData.contents; // 저장된 데이터가 있으면 그 내용을 사용
   }
 
   // 할 일을 나타내는 DOM 요소 생성
-  const newLi = document.createElement("li");   // li 요소 생성
+  const newLi = document.createElement("li"); // li 요소 생성
   const newSpan = document.createElement("span"); // span 요소 생성 (할 일 내용 표시)
   const newBtn = document.createElement("button"); // 완료 버튼 생성
 
@@ -29,11 +29,12 @@ const createTodo = function (storageData) {
   // 할 일을 더블클릭하면 삭제
   newLi.addEventListener("dblclick", () => {
     newLi.remove(); // li 요소 제거
-    saveItemsFn();  // 변경 내용을 저장
+    saveItemsFn(); // 변경 내용을 저장
   });
 
   // 저장된 데이터가 완료 상태면 완료 표시 추가
-  if (storageData?.complete) { // 옵셔널 체이닝 사용
+  if (storageData?.complete) {
+    // 옵셔널 체이닝 사용
     newLi.classList.add("complete"); // 완료 클래스 추가
   }
 
@@ -53,7 +54,7 @@ const createTodo = function (storageData) {
 
 // Enter 키를 눌렀을 때 할 일 추가
 const keyCodeCheck = function () {
-  if (window.event.keyCode === 13 && todoInput.value !== "") {
+  if (window.event.keyCode === 13 && todoInput.value.trim() !== "") {
     createTodo(); // 입력값이 있으면 할 일을 생성
   }
 };
@@ -70,19 +71,19 @@ const deleteAll = function () {
 // localStorage에 저장하는 함수
 const saveItemsFn = function () {
   const saveItems = []; // 저장할 데이터를 담을 배열
-  
+
   // 현재 목록의 할 일들을 객체로 변환하여 저장
   for (let i = 0; i < todoList.children.length; i++) {
     const todoObj = {
       contents: todoList.children[i].querySelector("span").textContent, // 할 일 내용
-      complete: todoList.children[i].classList.contains("complete"),   // 완료 상태
+      complete: todoList.children[i].classList.contains("complete"), // 완료 상태
     };
     saveItems.push(todoObj); // 객체를 배열에 추가
   }
 
   // 배열이 비었으면 localStorage에서 데이터 제거, 아니면 저장
-  saveItems.length === 0 
-    ? localStorage.removeItem('saved-items') // 데이터가 없으면 키 삭제
+  saveItems.length === 0
+    ? localStorage.removeItem("saved-items") // 데이터가 없으면 키 삭제
     : localStorage.setItem(
         "saved-items",
         JSON.stringify(saveItems) // 배열을 문자열로 변환 후 저장
@@ -96,19 +97,35 @@ if (savedTodoList) {
   }
 }
 
+const weatherSearch = function (position) {
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=9756434244216c3d2f9c08591b54bede`
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .then((json) => {
+      console.log(json.name ,json.weather[0].description);
+    })
+    .catch((err)=> {
+     console.log(err);
+    })
+};
+
 // 위치 정보를 처리하는 함수
 const acessToGeo = function (position) {
   const positionObj = {
     latitude: position.coords.latitude, // 위도
-    longitube: position.coords.longitude // 경도 (오타: longitube → longitude)
+    longitude: position.coords.longitude, // 경도 (오타: longitube → longitude)
   };
-  console.log(positionObj); // 위치 정보 출력
-  console.log(position); // 전체 위치 데이터 출력
+  // console.log(positionObj); // 위치 정보 출력
+  // console.log(position); // 전체 위치 데이터 출력
+  weatherSearch(positionObj);
 };
 
 // Geolocation API로 사용자 위치 요청
 const askForLocation = function () {
-  navigator.getCurrentPosition(
+  navigator.geolocation.getCurrentPosition(
     acessToGeo, // 위치 정보를 가져오면 실행할 콜백
     (err) => {
       console.log(err); // 에러가 발생하면 에러 정보를 출력
