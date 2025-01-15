@@ -68,5 +68,4 @@ const handleClick = useCallback(() => {
 | **react.memo** | 컴포넌트              | N/A                              | 자식 컴포넌트를 다시 그릴 필요 없을 때 |
 | **useCallback**| 함수                  | 값이 바뀌면 새로운 함수 생성            | 같은 함수 재사용이 필요할 때 |
 
-이렇게 간단히 정리할 수 있어요!
 
