@@ -1,0 +1,21 @@
+.버튼스타일 {
+  background-color: yellow;
+
+  @apply text-철수가좋아하는색깔; /* 테일윈드CSS 함께 쓰고 싶을때 */
+}
+
+.네모상자스타일 {
+  width: 200px;
+  height: 200px;
+
+  @apply bg-영희가좋아하는색깔; /* 테일윈드CSS 함께 쓰고 싶을때 */
+}
+
+.네모상자스타일2 {
+  width: 200px;
+  height: 200px;
+
+  @apply bg-영희가좋아하는색깔; /* 테일윈드CSS 함께 쓰고 싶을때 */
+
+  padding: 30px; /* box-sizing: border-box가 이미 global.css에 적용되어 있음 */
+}

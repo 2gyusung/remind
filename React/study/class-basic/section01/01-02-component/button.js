@@ -1,2 +1,1 @@
-const btn = <button>등록하기</button>
-// 바벨로 변환
+const 철수의버튼 = <button>등록하기</button>  /* 바벨이 진짜 HTML로 바꿔줌(이건 JS로 흉내낸 가짜 HTML => JSX) */

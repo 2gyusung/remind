@@ -1,0 +1,22 @@
+.myreflow {
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.myreflow:hover {
+  left: 20px;
+}
+
+.myrepaint {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  will-change: transform;
+}
+.myrepaint:hover {
+  transform: translateX(20px);
+}

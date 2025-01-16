@@ -1,0 +1,10 @@
+this
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+function 더하기(){
+    console.log(this)
+}
+undefined
+
+더하기()
+VM698:2 Window {window: Window, self: Window, document: document, name: '', location: Location, …}

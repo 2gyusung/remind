@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>shorthand-property 실습</title>
+    <script>
+      // 구조분해할당 => let { name, age, school } = profile
+      const qqq = ({ name, age, school }) => {
+        console.log(name); // 철수
+        console.log(age); // 12
+        console.log(school); // 다람쥐초등학교
+      };
+
+      // const profile = {
+      //     name: name,    => shorthand-property(키, 밸류 같으므로 합치기)
+      //     age: age,
+      //     school: school
+      // }
+      const name = "철수";
+      const age = 12;
+      const school = "다람쥐초등학교";
+      qqq({ name, age, school });
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>this의 이해</title>
+    <script>
+      class 카운터클래스 {
+        count = 10;
+
+        // 해결방법1) 함수를 화살표함수로 바꾸면, 실행 주체가 바뀌어도 로직 상에서의 this를 유지함
+        카운트올려주세요 = () => {
+          console.log("===========================");
+          console.log("카운트올려주세요 this: ", this); // this: 카운터클래스
+          console.log("===========================");
+
+          this.count = this.count + 1;
+          console.log(this.count); // this: 카운터클래스
+        };
+
+        버튼그려주세요() {
+          console.log("===========================");
+          console.log("버튼그려주세요 this: ", this); // this: 카운터클래스
+          console.log("===========================");
+
+          const button = document.createElement("button");
+          button.innerText = "카운트 올리기!!";
+          button.addEventListener("click", this.카운트올려주세요);
+          document.body.appendChild(button);
+        }
+      }
+
+      window.onload = () => {
+        const 카운터 = new 카운터클래스();
+        카운터.버튼그려주세요();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

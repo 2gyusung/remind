@@ -1,14 +1,12 @@
 import {Link} from 'react-router-dom'
 
-const Bbb = () => {
-  return (
-    <>
-    <div>
-      Bbb 페이지 입니다
-    </div>
-      <Link to="/aaa">AAA  페이지로 갈래요</Link>
-    </>
-  )
+const Bbb = ()=> {
+    return (
+        <>
+            <div>Bbb 입니다.</div>
+            <Link to="/aaa">Aaa로 갈래요</Link>
+        </>
+    )
 }
 
 export default Bbb
