@@ -303,3 +303,4 @@ query {
 }
 ```
 
+https://velog.io/@sangki2070/Graphql-Api-%EC%97%B0%EC%8A%B5
