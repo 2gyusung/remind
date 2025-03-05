@@ -178,3 +178,5 @@ module.exports = {
   height={300}
 />
 ```
+
+<!-- 섹션 04 next 내장기능 참고 노션 -->
